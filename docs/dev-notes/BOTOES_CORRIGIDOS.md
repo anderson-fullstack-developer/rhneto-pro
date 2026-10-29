@@ -8,7 +8,7 @@ Múltiplos botões de fechar e ações não estavam respondendo a cliques.
 ### 1. **Close Button (`.close-btn`) - Seletor Inadequado**
 - **Problema**: `document.querySelector('.close-btn')` selecionava apenas o **primeiro** elemento com classe `.close-btn`
 - **Impacto**: Modais de Turnos, Gorjetas e Férias em Lote ficavam sem listeners
-- **Localização**: [dashboard.js#L619](dashboard.js)
+- **Localização**: `dashboard.js#L619`
 
 **ANTES:**
 ```javascript
@@ -23,7 +23,7 @@ const closeBtn = editModal ? editModal.querySelector('.close-btn') : null;
 
 ### 2. **Modal de Turnos - Faltava Listener**
 - **Problema**: `closeModal` (ID: `closeTurnoModal`) tinha elemento HTML mas nenhum `addEventListener`
-- **Localização**: [dashboard.php#L2420](dashboard.php), [dashboard.js#L2130](dashboard.js)
+- **Localização**: `dashboard.php#L2420`, `dashboard.js#L2130`
 
 **CORREÇÃO APLICADA:**
 ```javascript
@@ -37,7 +37,7 @@ if (closeModal) {
 
 ### 3. **Modal de Gorjetas - Faltava Listener**
 - **Problema**: `closeModal` (ID: `closeGorjetaModal`) tinha elemento HTML mas nenhum `addEventListener`
-- **Localização**: [dashboard.php#L2796](dashboard.php), [dashboard.js#L2584](dashboard.js)
+- **Localização**: `dashboard.php#L2796`, `dashboard.js#L2584`
 
 **CORREÇÃO APLICADA:**
 ```javascript
@@ -68,10 +68,10 @@ if (closeModal) {
 
 | Função | Status | Ubicação |
 |--------|--------|----------|
-| `exportEmployeesPDF()` | ✅ Existe | [dashboard.js#L3232](dashboard.js) |
-| `exportEmployeesExcel()` | ✅ Existe | [dashboard.js#L3380](dashboard.js) |
-| `toggleExportDropdown()` | ✅ Existe | [dashboard.js#L3098](dashboard.js) |
-| onclick handlers (PDF/Excel) | ✅ Existem | [dashboard.php#L1168-1171](dashboard.php) |
+| `exportEmployeesPDF()` | ✅ Existe | `dashboard.js#L3232` |
+| `exportEmployeesExcel()` | ✅ Existe | `dashboard.js#L3380` |
+| `toggleExportDropdown()` | ✅ Existe | `dashboard.js#L3098` |
+| onclick handlers (PDF/Excel) | ✅ Existem | `dashboard.php#L1168-1171` |
 
 **Resultado**: Exportação PDF/Excel deve funcionar corretamente.
 

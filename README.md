@@ -15,6 +15,10 @@ Final project (PAP) of the Management Informatics Technician course at Escola Pr
 |---|---|---|
 | ![Dashboard with indicators and recent activity](docs/screenshots/01-painel.webp) | ![Weekly shift schedule](docs/screenshots/02-turnos.webp) | ![Payroll with base salary, tips and payment status](docs/screenshots/03-folha-pagamento.webp) |
 
+| Employee app: PIN login | Employee app: home |
+|---|---|
+| <img src="docs/screenshots/04-app-login.webp" width="260" alt="Employee app PIN login"> | <img src="docs/screenshots/05-app-inicio.webp" width="260" alt="Employee app home with clock-in and month summary"> |
+
 ## Features
 
 **Management panel**
@@ -60,8 +64,32 @@ cp .env.example .env          # fill in the database; leave INFOBIP_ENABLED=fals
 3. Open the management panel at `http://localhost/app-rhnetopro/admin/views/login.php` and register the first administrator.
 4. The employee app is at `http://localhost/app-rhnetopro/app/employee_login.php`.
 
-Full technical documentation (in Portuguese): [`PROJECT_DOCUMENTATION.md`](PROJECT_DOCUMENTATION.md).
+## Project structure
+
+```text
+admin/          management panel (views, controllers, assets)
+app/            employee app (PIN login)
+api/            JSON endpoints used by both interfaces
+config/         database connection and environment loading
+includes/       shared helpers
+planos/         subscription plans and Stripe Checkout
+webhook/        Stripe webhook
+sms_module/     Infobip SMS integration
+database/sql/   schema and demo data
+tools/          local maintenance scripts (blocked from the web)
+manualadm/      illustrated user manual for the management panel
+manualuserfuncionario/  illustrated user manual for the employee app
+docs/           technical documentation, roadmap and screenshots
+```
+
+## Documentation
+
+Written in Portuguese.
+
+- [Technical documentation](docs/PROJECT_DOCUMENTATION.md)
+- [Roadmap](docs/ROADMAP.md)
+- [User manual](docs/MANUAL_UTILIZADOR.md)
 
 ## Author
 
-Built by **Anderson Neto** — [Portfolio](https://andersonneto.gt.tc) · [LinkedIn](https://linkedin.com/in/anderson-fullstack-developer)
+**Anderson Neto**, Full-Stack Developer in Lisbon. [Portfolio](https://andersonneto.gt.tc) · [LinkedIn](https://linkedin.com/in/anderson-fullstack-developer)

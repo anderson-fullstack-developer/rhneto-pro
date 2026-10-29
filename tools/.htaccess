@@ -1,0 +1,9 @@
+# Development and maintenance scripts: never reachable from the web.
+# Run them locally only.
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+</IfModule>
